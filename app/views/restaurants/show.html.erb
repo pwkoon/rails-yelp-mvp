@@ -4,5 +4,16 @@
 <p>Address: <%= @restaurant.address %></p>
 <p>Contact number: <%= @restaurant.phone_number %></p>
 <p>Category: <%= @restaurant.category %></p>
+<hr>
+<h2>Restaurant's review:</h2>
+<div class="row">
+  <div class="d-flex justify-content-between">
+  <% @restaurant.reviews.each do |review| %>
+  <p><%= review.content %></p>
+  <p><%= review.rating %></p>
+  <br>
+  <% end %>
+  </div>
+</div>
 
 <%= link_to "Edit restaurant", edit_restaurant_path(@restaurant) %>
